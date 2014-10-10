@@ -1,8 +1,3 @@
-'''
-Created on 2014/10/5
-
-@author: Unlimited
-'''
 from httplib import BadStatusLine
 import json
 import random
@@ -134,19 +129,12 @@ class Client(threading.Thread):
         util.logPrint('Captcha required. Please go to www.omegle.com and enter the captcha manually.')
         util.logPrint('Disconnecting...')
         self.stop()
-        '''url = RECAPTCHA_CHALLENGE_URL % challenge
-        source = self.browser.open(url).read()
-        challenge = recaptcha_challenge_regex.search(source).groups()[0]
-        url = RECAPTCHA_IMAGE_URL % challenge
-        util.logPrint ('Recaptcha required: %s' % url)
-        response = raw_input('Response: ')
-        self.recaptcha(challenge, response)'''
 
     def handle_common_likes(self, likes):
         util.logPrint( '[%s] You both like %s.' % (self.name, ', '.join(likes)))
 
     def handle_typing(self):
-        util.logPrint( '[%s] Stranger is typing...' % self.name)
+        #util.logPrint( '[%s] Stranger is typing...' % self.name)
         self.other_client.typing()
 
     def handle_stopped_typing(self):
@@ -178,15 +166,6 @@ class Client(threading.Thread):
         response = self.browser.open(url)
         data = json.load(response)
         return data
-
-    def recaptcha(self, challenge, response):
-        url = self.RECAPTCHA_URL % self.server
-        data = {'id': self.client_id, 'challenge':
-                challenge, 'response': response}
-        try:
-            self.browser.open(url, urllib.urlencode(data))
-        except BadStatusLine:
-            return
 
     def event(self):
         url = self.EVENTS_URL % self.server

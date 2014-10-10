@@ -1,8 +1,3 @@
-'''
-Created on 2014/10/4
-
-@author: Unlimited
-'''
 import argparse
 import util
 from Client import Client

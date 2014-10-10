@@ -1,8 +1,3 @@
-'''
-Created on 2014/10/5
-
-@author: Unlimited
-'''
 import logging
 import math
 import random
@@ -37,32 +32,10 @@ def randid():
         randid += RANDID_SELECTION[c]
     return randid
 
-'''
-def commonLikeSearchTimeout(topic):
-    # FIXME: logic duplication with "response = self.browser.open(url, urllib.urlencode(data), util.WAIT_TIMEOUT)"
-    if topic == None: return False
-    global accTime
-    global PERIOD
-    accTime += PERIOD
-    return (accTime >= WAIT_TIMEOUT)
-'''
-
 def waitForClient(client, topic):
     while client.state == 'WAITING' or client.state == 'INIT':
         # print client.state
         time.sleep(PERIOD) 
     if client.state == 'STOP' or client.state == 'RECAPTCHA_REQUIRED':
         sys.exit(0)
-    
-    '''
-    global accTime
-    accTime = 0
-    while(not client.connected):
-        time.sleep(PERIOD)
-        if commonLikeSearchTimeout(topic):
-            #logPrint('Failed to find anyone with interest ' + topic)
-            return False
-    return True
-    '''
-                
             

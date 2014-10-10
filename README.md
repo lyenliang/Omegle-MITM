@@ -4,3 +4,17 @@ Features:
 
 1. Support 'Common likes': you can specify the common topic fow the two strangers by adding "-t topic". If the program fails to find two strangers with the same topic, it disconnects the stranger.
 2. Messages from the two strangers would be recorded into a file named YYYY-MM-DD_HH-MM-SS.log.
+
+
+Example:
+
+Looking for someone you can chat with...
+You're now chatting with a random stranger. Say hi!
+Looking for someone you can chat with...
+You're now chatting with a random stranger. Say hi!
+[Stranger 1] Stranger: hi
+[Stranger 2] Stranger is typing...
+[Stranger 2] Stranger: bonnie960
+ thats my usrname if you want to talk on k _ i _ k
+[Stranger 2] Stranger has disconnected.
+Disconnecting...

@@ -5,6 +5,9 @@ Features:
 1. Support 'Common likes': you can specify the common topic fow the two strangers by adding "-t topic". If the program fails to find two strangers with the same topic, it disconnects the stranger.
 2. Messages from the two strangers would be recorded into a file named YYYY-MM-DD_HH-MM-SS.log.
 
+Requirements:
+ - Python 2.7
+ - Python module "mechanize", which can be downloaded at https://pypi.python.org/pypi/mechanize/
 
 Example:
 
